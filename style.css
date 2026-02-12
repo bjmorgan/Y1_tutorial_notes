@@ -1,14 +1,24 @@
 .keypoint {
   border: 1px solid #ccc;
   background-color: #f9f9f9;
+  color: #333;
   padding: 12px 16px;
   margin: 1em 0;
   border-radius: 4px;
 }
 
-.keypoint strong:first-child {
-  display: block;
-  margin-bottom: 4px;
+/* Sepia / color-theme-1 */
+.book.color-theme-1 .keypoint {
+  border-color: #c0b392;
+  background-color: #f5eacd;
+  color: #5b4636;
+}
+
+/* Night / color-theme-2 */
+.book.color-theme-2 .keypoint {
+  border-color: #555;
+  background-color: #2d2d2d;
+  color: #c8c8c8;
 }
 
 p.caption {
