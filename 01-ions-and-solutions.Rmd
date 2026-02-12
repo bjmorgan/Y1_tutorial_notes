@@ -1,0 +1,343 @@
+# Ions and Solutions {#ions-and-solutions}
+
+## pH and neutrality
+
+You have probably been taught that "neutral water has pH 7". This is true at 25 °C, but it is *not* a general rule. To understand why, we need to think about what is actually happening in liquid water.
+
+### The autoionisation of water
+
+Water molecules constantly react with each other:
+
+$$\ce{2H2O <=> H3O+ + OH-}$$
+
+This is an equilibrium, and like all equilibria it is described by an equilibrium constant:
+
+$$K_\mathrm{w} = [\ce{H+}][\ce{OH-}]$$
+
+At 25 °C, $K_\mathrm{w} = 10^{-14}$.
+
+This equilibrium lies very far to the left: only a tiny fraction of water molecules are ionised at any instant. But it is always there, and it is the *reason* that pure water contains any $\ce{H+}$ or $\ce{OH-}$ at all.
+
+### Why does $K_\mathrm{w}$ change with temperature?
+
+The autoionisation is **endothermic** ($\Delta H > 0$): it costs energy to break an $\ce{O-H}$ bond and separate charge. By Le Chatelier's principle, raising the temperature shifts an endothermic equilibrium to the right. So at higher temperatures, more water molecules dissociate, and $K_\mathrm{w}$ gets larger.
+
+At 100 °C, $\mathrm{p}K_\mathrm{w} \approx 12$, meaning $K_\mathrm{w} \approx 10^{-12}$. This is 100 times larger than at 25 °C, so there really is more $\ce{H+}$ and more $\ce{OH-}$ in hot water.
+
+### What does "neutral" actually mean?
+
+Think about what we mean physically. In pure water, every $\ce{H+}$ ion is produced alongside an $\ce{OH-}$ ion (they come from the same autoionisation reaction). There is no other source of either ion. So in pure water, $[\ce{H+}] = [\ce{OH-}]$, always, at any temperature.
+
+::: {.keypoint}
+A neutral solution is one where $[\ce{H+}] = [\ce{OH-}]$. That is the definition of neutrality. It is *not* defined as pH $= 7$.
+:::
+
+Since $[\ce{H+}] = [\ce{OH-}]$ and $[\ce{H+}][\ce{OH-}] = K_\mathrm{w}$, we can write:
+
+$$[\ce{H+}]^2 = K_\mathrm{w}, \qquad [\ce{H+}] = \sqrt{K_\mathrm{w}}, \qquad \text{pH} = \frac{\mathrm{p}K_\mathrm{w}}{2}$$
+
+At 25 °C: $\text{pH} = 14/2 = 7$. At 100 °C: $\text{pH} = 12/2 = 6$.
+
+Boiling water has pH 6, but it is perfectly neutral. There is equal $\ce{H+}$ and $\ce{OH-}$. There is just *more* of both, because the endothermic autoionisation is favoured at higher temperature.
+
+**Note on the calculation:** If we are told only $K_\mathrm{w}$, we need to *assume* neutrality ($[\ce{H+}] = [\ce{OH-}]$) in order to calculate a pH. Without this assumption, we only know the *product* $[\ce{H+}][\ce{OH-}]$, not the individual concentrations. For pure water this assumption is justified; for a solution containing an acid or base, it would not be.
+
+## Buffer solutions
+
+### What is in a buffer solution?
+
+Consider a buffer made from 0.1 mol of acetic acid ($\ce{CH3COOH}$, a weak acid, which we abbreviate $\ce{HA}$) and 0.1 mol of sodium acetate ($\ce{CH3COONa}$), dissolved in 1 L of water. Before thinking about any equations, let us think about what is physically present in the solution:
+
+- The **acetic acid** ($\ce{HA}$) is a weak acid. It does *not* fully dissociate. The equilibrium $\ce{HA <=> H+ + A-}$ lies well to the left ($K_\mathrm{a} \sim 10^{-5}$). So most of the acetic acid sits in solution as intact $\ce{HA}$ molecules.
+
+- The **sodium acetate** is a salt. It dissociates completely: $\ce{CH3COONa -> Na+ + CH3COO-}$. The $\ce{Na+}$ is a spectator ion; it plays no further role. The $\ce{CH3COO-}$ (which we call $\ce{A-}$) is the **conjugate base** of acetic acid.
+
+So we have deliberately placed both $\ce{HA}$ and $\ce{A-}$ into the solution, each at a known concentration. This is the essential feature of a buffer: a reservoir of weak acid *and* its conjugate base, both present in significant amounts.
+
+**Why doesn't the $\ce{A-}$ just react with water to form $\ce{HA}$?** It does, partially. The system reaches equilibrium, but $K_\mathrm{a} \sim 10^{-5}$ means the equilibrium concentration of $\ce{H+}$ is tiny ($\sim 10^{-5}$ M). The amount of $\ce{A-}$ that converts to $\ce{HA}$ is negligible compared to the 0.1 mol we put in. When the buffer concentrations ($\sim 0.1$ M) are huge compared to $K_\mathrm{a}$ ($\sim 10^{-5}$), the stoichiometric amounts we put in are an excellent approximation to the equilibrium amounts.
+
+### Why does a buffer resist pH changes?
+
+The key idea is that the buffer has chemical *reservoirs* that can neutralise added acid or base.
+
+**Adding acid:** Suppose you add a small amount of strong acid (say $\ce{HCl}$). The $\ce{HCl}$ dissociates completely, releasing $\ce{H+}$ ions. But these $\ce{H+}$ ions do not simply accumulate in solution. The conjugate base $\ce{A-}$ reacts with them:
+
+$$\ce{H+ + A- -> HA}$$
+
+The $\ce{A-}$ "mops up" the added $\ce{H+}$, converting it into undissociated $\ce{HA}$. Why does this happen? Because $K_\mathrm{a}$ is small ($\sim 10^{-5}$), the equilibrium $\ce{HA <=> H+ + A-}$ strongly favours the left-hand side. Adding $\ce{H+}$ pushes the equilibrium even further to the left (Le Chatelier), so the reaction goes essentially to completion.
+
+The result: the amount of free $\ce{H+}$ barely changes. Instead, you have slightly less $\ce{A-}$ and slightly more $\ce{HA}$.
+
+**Adding base:** If you add $\ce{OH-}$ instead, the weak acid neutralises it:
+
+$$\ce{OH- + HA -> A- + H2O}$$
+
+Now you have slightly less $\ce{HA}$ and slightly more $\ce{A-}$, but the pH barely changes.
+
+::: {.keypoint}
+A buffer works because the conjugate base mops up added $\ce{H+}$, and the weak acid neutralises added $\ce{OH-}$. The buffer is overwhelmed only when you run out of one of these reservoirs.
+:::
+
+### The Henderson--Hasselbalch equation
+
+This is not a new equation to memorise. It is simply the $K_\mathrm{a}$ expression, rearranged:
+
+$$K_\mathrm{a} = \frac{[\ce{H+}][\ce{A-}]}{[\ce{HA}]}$$
+
+$$[\ce{H+}] = K_\mathrm{a}\,\frac{[\ce{HA}]}{[\ce{A-}]}$$
+
+$$\text{pH} = \mathrm{p}K_\mathrm{a} + \log\!\left(\frac{[\ce{A-}]}{[\ce{HA}]}\right)$$
+
+When $[\ce{A-}] = [\ce{HA}]$, the log term vanishes and $\text{pH} = \mathrm{p}K_\mathrm{a}$. This is the **optimal buffer**: you have equal amounts of acid and base available, so you are equally well prepared for added acid or added base.
+
+### Thinking through a buffer problem
+
+Rather than blindly plugging into the Henderson--Hasselbalch equation, it is better to think step by step about what happens physically. Consider adding 0.01 mol of $\ce{HCl}$ to 1 L of the acetic acid buffer described above:
+
+1. **$\ce{HCl}$ dissociates completely** (it is a strong acid): $\ce{HCl -> H+ + Cl-}$. We now have 0.01 mol of extra $\ce{H+}$.
+
+2. **The conjugate base mops up the $\ce{H+}$:** The $\ce{A-}$ reacts with the added $\ce{H+}$ to form $\ce{HA}$, and this goes essentially to completion (because $K_\mathrm{a}$ is small). So 0.01 mol of $\ce{A-}$ is consumed, and 0.01 mol of $\ce{HA}$ is produced.
+
+3. **Work out the new concentrations:**
+\begin{align*}
+[\ce{A-}] &= 0.10 - 0.01 = 0.09~\text{M} \\
+[\ce{HA}] &= 0.10 + 0.01 = 0.11~\text{M}
+\end{align*}
+
+4. **Now use Henderson--Hasselbalch:**
+$$\text{pH} = 4.756 + \log\!\left(\frac{0.09}{0.11}\right) = 4.756 - 0.087 = 4.669$$
+
+The pH has shifted by less than 0.1 units, despite adding a significant amount of strong acid. Compare: adding 0.01 mol of $\ce{HCl}$ to 1 L of pure water would give $\text{pH} \approx 2$.
+
+### The stoichiometric approximation
+
+In Step 3 above, we used the stoichiometric concentrations (0.09 and 0.11 M) as though they were the true equilibrium concentrations. Strictly, a tiny amount of the $\ce{HA}$ will dissociate back to $\ce{H+}$ and $\ce{A-}$ at equilibrium. To get the exact answer you would need to solve a quadratic. But because $K_\mathrm{a}$ ($\sim 10^{-5}$) is so much smaller than the buffer concentrations ($\sim 0.1$ M), the equilibrium shift is negligible. This is why buffer problems typically say "*estimate* the pH": we are making a deliberate, physically justified approximation.
+
+## Activity and ionic strength
+
+### The problem with concentrations
+
+Up to this point we have been using concentrations directly in our equilibrium expressions: $K_\mathrm{a} = [\ce{H+}][\ce{A-}]/[\ce{HA}]$, $K_\mathrm{w} = [\ce{H+}][\ce{OH-}]$, and so on. This works well for dilute solutions of uncharged molecules. But for ions, there is a problem.
+
+### The ionic atmosphere: a physical picture
+
+In an ionic solution, every ion is surrounded by other ions. Electrostatics dictates that oppositely charged ions tend to cluster nearby: a positive ion will, on average, have slightly more negative ions in its vicinity than positive ones. This surrounding cloud of (predominantly) opposite charge is called the **ionic atmosphere**.
+
+The ionic atmosphere partially **stabilises** the central ion. Think of it this way: the ion sits in a favourable electrostatic environment, a potential energy well created by the surrounding charges. To participate in a chemical reaction, the ion would need to leave this stabilising environment. There is an energetic cost to doing so.
+
+The practical consequence is that a stabilised ion is *less reactive* than a free ion would be. An $\ce{H+}$ ion surrounded by its ionic atmosphere is less available to react with a base, donate to a proton transfer, or do anything else chemical. It behaves as though its concentration were *lower* than it actually is.
+
+::: {.keypoint}
+The ionic atmosphere stabilises ions in solution. A more stabilised ion has a greater energetic cost to participate in chemistry, so it behaves as though its concentration is lower than it really is.
+:::
+
+### Activity: quantifying the effect
+
+We formalise this using the concept of **activity**. The activity of an ion is its "effective concentration": the concentration it *appears* to have, based on its chemical behaviour:
+
+$$a = \gamma \, c$$
+
+where $c$ is the actual (stoichiometric) concentration and $\gamma$ is the **activity coefficient**.
+
+- In an ideal (very dilute) solution: $\gamma = 1$, so $a = c$ and concentrations work fine.
+- In a real solution with significant ion--ion interactions: $\gamma < 1$, so $a < c$. The ion is "less active" than its concentration suggests.
+
+For pH, this means we should really write:
+
+$$\text{pH} = -\log(a_{\ce{H+}}) = -\log(\gamma\,[\ce{H+}])$$
+
+A lower $\gamma$ gives a higher pH (less acidic) than the concentration alone would predict.
+
+### Ionic strength: what controls the ionic atmosphere?
+
+The strength of the ionic atmosphere depends on two things: *how many* ions are nearby, and *how charged* they are. A doubly-charged ion creates a much stronger electrostatic field than a singly-charged one, and therefore contributes more to the ionic atmosphere of every other ion in the solution.
+
+This is quantified by the **ionic strength**, $I$:
+
+$$I = \frac{1}{2}\sum_i c_i\,z_i^2$$
+
+where the sum runs over all ions, $c_i$ is the concentration of ion $i$, and $z_i$ is its charge.
+
+Notice the $z_i^2$ weighting: a $\ce{SO4^{2-}}$ ion contributes *four* times as much to the ionic strength as a $\ce{Cl-}$ ion at the same concentration, because $(2)^2 = 4$ versus $(1)^2 = 1$. This reflects the physical reality that a more highly charged ion has a stronger electrostatic effect on its surroundings.
+
+### The Debye--Hückel limiting law
+
+The Debye--Hückel limiting law gives us a quantitative estimate of how much the ionic atmosphere reduces $\gamma$:
+
+$$\log\gamma_{\pm} = -0.509\,|z_+\,z_-|\,\sqrt{I}$$
+
+This equation encodes the physics we have been discussing:
+
+- **Higher ionic strength $\to$ smaller $\gamma$:** More ions means a denser ionic atmosphere, which stabilises each ion more, making it less chemically active.
+- **Higher charges $\to$ smaller $\gamma$:** More highly charged ions interact more strongly, so the stabilisation effect is larger.
+- **$\sqrt{I}$ dependence:** This comes from the physics of electrostatic screening (the Debye screening length scales as $1/\sqrt{I}$).
+
+The equation is valid for dilute solutions ($I \lesssim 0.01$ M). At higher concentrations, the simple model breaks down and more sophisticated theories are needed.
+
+### Example: why do HCl and H~2~SO~4~ differ?
+
+Consider 0.01 M $\ce{HCl}$ and 0.005 M $\ce{H2SO4}$. Ideally, both produce $[\ce{H+}] = 0.01$ M and pH $= 2$. But in reality, the $\ce{H2SO4}$ solution has a slightly *higher* pH (is less acidic). Why?
+
+1. **Stronger ionic atmosphere:** $\ce{H2SO4}$ contains the doubly-charged $\ce{SO4^{2-}}$ ion, which contributes more to the ionic strength ($I = 0.015$ M) than the singly-charged $\ce{Cl-}$ in $\ce{HCl}$ ($I = 0.01$ M). A higher ionic strength means a stronger ionic atmosphere, a smaller $\gamma$, and therefore a higher pH.
+
+2. **Incomplete dissociation:** $\ce{H2SO4}$ is dibasic. The first proton comes off completely, but the second does not. The solution contains a mixture of $\ce{HSO4-}$ and $\ce{SO4^{2-}}$. So there are fewer free $\ce{H+}$ ions than the ideal calculation predicts.
+
+### Worked example: applying the Debye--Hückel limiting law
+
+Let us put numbers to the ionic atmosphere effect for 0.01 M $\ce{HCl}$.
+
+1. **Identify the ions and their charges.** $\ce{HCl}$ dissociates completely: $[\ce{H+}] = [\ce{Cl-}] = 0.01$ M, with charges $z_+ = +1$ and $z_- = -1$.
+
+2. **Calculate the ionic strength.**
+$$I = \tfrac{1}{2}(0.01 \times 1^2 + 0.01 \times 1^2) = 0.01~\text{M}$$
+
+3. **Apply the Debye--Hückel limiting law.**
+$$\log\gamma = -0.509 \times |{+1} \times {-1}| \times \sqrt{0.01} = -0.509 \times 1 \times 0.1 = -0.0509$$
+
+4. **Find $\gamma$.**
+$$\gamma = 10^{-0.0509} = 0.889$$
+The activity of $\ce{H+}$ is about 89% of its concentration. The ionic atmosphere reduces its effective concentration by about 11%.
+
+5. **Calculate the pH.**
+$$\text{pH} = -\log(\gamma \times [\ce{H+}]) = -\log(0.889 \times 0.01) = -\log(0.00889) = 2.051$$
+
+This is slightly higher than the ideal pH of 2.000, as we expected: the ionic atmosphere stabilises the $\ce{H+}$, making it less active.
+
+**Shortcut:** Since $\text{pH} = -\log\gamma - \log[\ce{H+}] = -\log\gamma + 2$, the correction to pH is simply $-\log\gamma = 0.051$. So $\text{pH} = 2 + 0.051 = 2.051$.
+
+## Osmotic pressure and PBS
+
+### What is osmotic pressure?
+
+When a solution is separated from pure solvent by a semi-permeable membrane (one that lets solvent through but not solute), solvent flows into the solution by **osmosis**. The **osmotic pressure** $\Pi$ is the pressure you would need to apply to the solution to stop this flow.
+
+Osmotic pressure is a **colligative property**: it depends only on the *total number* of dissolved particles, not on their identity, charge, or mass. Every dissolved ion or molecule contributes equally. The osmotic pressure is:
+
+$$\Pi = cRT$$
+
+where $c$ is the total concentration of all dissolved species.
+
+::: {.keypoint}
+Use the **total particle concentration** for osmotic pressure, **not** the ionic strength. Ionic strength weights by charge squared; it measures the electrostatic environment. Osmotic pressure just counts particles. This is a common source of error.
+:::
+
+**A note on the van 't Hoff factor.** Some textbooks write the osmotic pressure as $\Pi = iMRT$, where $M$ is the *formula* concentration of the salt (e.g. 0.135 M for $\ce{NaCl}$) and $i$ is the **van 't Hoff factor**, the number of ions produced per formula unit ($i = 2$ for $\ce{NaCl}$, $i = 3$ for $\ce{Na2HPO4}$, etc.). This is equivalent to what we are doing: if you have already counted all the individual ions and added up their concentrations to get $c$, you do not need $i$ because it is already accounted for. The two approaches give the same answer.
+
+### Why does this matter? Isotonicity
+
+Osmotic pressure is critically important in biology. Cell membranes are semi-permeable, so if you place a cell in a solution with the wrong osmotic pressure, water flows across the membrane:
+
+- **Too dilute** (hypotonic): water flows *into* the cell, it swells and may burst (**lysis**).
+- **Too concentrated** (hypertonic): water flows *out* of the cell, it shrivels (**crenation**).
+
+A solution with the same osmotic pressure as body fluids is called **isotonic**. This is why medical solutions like **Phosphate-Buffered Saline (PBS)** are carefully formulated to match the osmotic pressure of blood ($\sim 800$ kPa at body temperature). The phosphate component also acts as a pH buffer near physiological pH ($\sim 7.4$).
+
+## Electrochemical cells
+
+### The physical setup
+
+An electrochemical cell consists of two **half cells**, each containing a chemical species that can gain or lose electrons. The half cells are connected by:
+
+- A **wire** (external circuit): electrons flow through this from one electrode to the other.
+- A **salt bridge**: ions flow through this to maintain electrical neutrality in each half cell.
+
+The key physical idea is that the oxidation and reduction are *separated in space*. Instead of the electron transfer happening directly between the reactants (as it would if you dropped iron into acid), the electrons are forced to travel through the external circuit, where we can measure a voltage or extract useful work.
+
+### Cell notation
+
+The cell is written as:
+
+$$\text{left electrode} \mid \text{left solution} \| \text{right solution} \mid \text{right electrode}$$
+
+- $\mid$ = phase boundary (solid/liquid, liquid/gas, etc.)
+- $\|$ = salt bridge
+- Commas separate species in the same phase.
+
+### Reduction potentials: what do they mean?
+
+Each half cell has a **standard reduction potential** $E^\circ$, listed in data tables. These are written as reduction reactions by convention:
+
+$$\text{Oxidised form} + n\,\ce{e-} \longrightarrow \text{Reduced form}$$
+
+What does the number mean physically? A more positive $E^\circ$ means the species has a stronger tendency to *gain* electrons (be reduced). A more negative $E^\circ$ means it would rather *lose* electrons (be oxidised).
+
+These are the same reactions that occur in the half cells, and they can run in either direction. The data table writes them as reductions by convention, but in a real cell one half cell will run as a reduction and the other will run in reverse (as an oxidation). Which way round? The cell potential tells us.
+
+### Calculating the cell potential
+
+This is the central calculation, and it is simple:
+
+$$E_\text{cell} = E^\circ(\text{RHS}) - E^\circ(\text{LHS})$$
+
+Use the reduction potentials *directly from the table*. There is no need to flip any reactions or change the sign of any potential. Just subtract: right minus left.
+
+The sign of $E_\text{cell}$ tells you the direction of spontaneous reaction:
+
+- $E_\text{cell} > 0$: the reaction proceeds spontaneously as written (left to right). Electrons flow from the left electrode to the right through the external circuit.
+- $E_\text{cell} < 0$: the spontaneous direction is the reverse.
+
+### Anode and cathode
+
+The **anode** is the electrode where **oxidation** occurs (electrons are released). The **cathode** is the electrode where **reduction** occurs (electrons are consumed).
+
+One approach to electrochemistry problems is to assign the anode and cathode at the start, using a memorised convention, and then work through the problem from there. This works, but it does rely on remembering the convention correctly, and on the question following the same convention you learnt.
+
+An alternative is to let the physics do the work for you. The cell potential $E_\text{cell}$ tells you, unambiguously, which direction the electrons flow. This tells you where oxidation and reduction occur, which in turn tells you which electrode is the anode and which is the cathode. You do need to remember what "anode" and "cathode" *mean*, but you do not need to memorise which electrode is which in advance. The physics tells you that.
+
+::: {.keypoint}
+Calculate $E_\text{cell}$ first. This tells you the direction of electron flow, and therefore where oxidation and reduction occur. The anode and cathode labels then follow from the definitions.
+:::
+
+### Stoichiometry and $\Delta G$
+
+To write the balanced overall reaction, you need to multiply the half reactions so that the number of electrons cancels. Getting the stoichiometry right matters, because it determines $n$, the number of electrons transferred, which you need for $\Delta G$.
+
+However, the cell potential $E$ itself does *not* change when you multiply a half reaction. Why not? Because $E$ is an **intensive property**: it is the energy *per electron* transferred. Just as doubling the amount of water in a beaker does not change its temperature, doubling the stoichiometry does not change the voltage.
+
+The Gibbs free energy change, on the other hand, is **extensive**, and scales with the amount of material:
+
+$$\Delta G = -nFE$$
+
+where $n$ is the number of moles of electrons transferred in the balanced reaction, and $F = 96500~\text{C mol}^{-1}$ is Faraday's constant. If you double the stoichiometry, $n$ doubles, and $\Delta G$ doubles. This makes physical sense: reacting twice as much material releases twice as much energy.
+
+So: stoichiometry matters for the overall reaction and for $\Delta G$, but not for $E$.
+
+## From cell potential to mass: Faraday's law
+
+If a galvanic cell is connected to an external circuit with some resistance, electrons flow and we can work out exactly how much material reacts. The reasoning is a chain of simple steps, each using a single physical law or definition:
+
+1. **Cell potential $\to$ current** (Ohm's law):
+$$I = \frac{V}{R}$$
+The cell potential $V$ drives a current $I$ through the external resistance $R$. An amp is a coulomb per second, so this tells you the rate at which charge flows.
+
+2. **Current $\to$ total charge** (definition of current):
+$$Q = I \times t$$
+If the current flows for time $t$, the total charge that has passed through the circuit is $Q$.
+
+3. **Charge $\to$ moles of electrons** (Faraday's constant):
+$$\text{moles of electrons} = \frac{Q}{F}$$
+Faraday's constant $F = 96500~\text{C mol}^{-1}$ is the charge carried by one mole of electrons. So dividing the total charge by $F$ gives the number of moles of electrons that have flowed.
+
+4. **Moles of electrons $\to$ moles of substance** (stoichiometry):
+$$\text{moles of substance} = \frac{\text{moles of electrons}}{n}$$
+Here $n$ comes directly from the half-reaction. For example, $\ce{Fe -> Fe^{2+} + 2e-}$ has $n = 2$: each iron atom releases 2 electrons, so you need 2 moles of electrons to dissolve 1 mole of iron.
+
+5. **Moles $\to$ mass** (molar mass): Multiply by the molar mass to get the answer in grams.
+
+The logic is completely linear:
+
+$$\text{voltage} \longrightarrow \text{current} \longrightarrow \text{charge} \longrightarrow \text{moles of } e^- \longrightarrow \text{moles} \longrightarrow \text{mass}$$
+
+::: {.keypoint}
+Each step uses one definition or law. If you understand what each quantity means physically, you can reconstruct this chain from scratch rather than memorising a formula.
+:::
+
+### Assumptions to be aware of
+
+Real galvanic cells are more complicated than this simple chain suggests. Some assumptions we are making:
+
+- **No internal resistance:** We assumed all the resistance is in the external circuit. In reality, the solution has some resistance too. Ions moving through solution have to push past solvent molecules, which impedes the flow of charge. This would reduce the current.
+
+- **Constant voltage:** As the reaction proceeds, the concentrations change, which changes the cell potential. We assumed the reaction time is short enough that this effect is negligible. (A more complete treatment uses the Nernst equation.)
+
+- **Ideal solution:** We used standard reduction potentials, which assume all activities are 1. In a real solution, activity coefficients would slightly alter the voltage (as discussed in Section \@ref(ions-and-solutions)).

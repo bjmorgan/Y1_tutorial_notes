@@ -1,0 +1,22 @@
+# Bookdown build output
+docs/
+_book/
+_bookdown_files/
+tutorial-notes.Rmd
+tutorial-notes.knit.md
+tutorial-notes.utf8.md
+tutorial-notes.tex
+tutorial-notes.log
+tutorial-notes.pdf
+libs/
+
+# R files
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# OS files
+.DS_Store
+Thumbs.db

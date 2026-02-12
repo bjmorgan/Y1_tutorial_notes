@@ -1,0 +1,9 @@
+book_filename: "tutorial-notes"
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: ""
+rmd_files:
+  - "index.Rmd"
+  - "01-ions-and-solutions.Rmd"
+output_dir: "docs"

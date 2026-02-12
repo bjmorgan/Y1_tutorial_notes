@@ -1,0 +1,16 @@
+---
+title: "CH12002 Tutorial Notes"
+autghor: "Benjamin J. Morgan"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: article
+bibliography: []
+link-citations: yes
+description: "Explanatory notes for Y1  Physical Chemistry tutorials at the University of Bath."
+---
+
+# About these notes {-}
+
+These notes accompany the tutorial questions for Y1 Physical Chemistry at the University of Bath. They are intended to help you understand the *chemistry* behind the calculations---what is physically happening, and why. Throughout these notes, the emphasis is on thinking through each problem before reaching for an equation.
+
+These notes are not a replacement for the tutorial itself, nor for your lecture notes. They are a companion resource, designed to be read alongside the tutorial questions.

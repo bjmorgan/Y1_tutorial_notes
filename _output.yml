@@ -1,0 +1,18 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      before: |
+        <li><a href="./">CH12002 Tutorial Notes</a></li>
+      after: |
+        <li><a href="https://www.bath.ac.uk/chemistry/" target="blank">Department of Chemistry, University of Bath</a></li>
+    edit: null
+    download: ["pdf"]
+    sharing: null
+  includes:
+    in_header: mathjax-mhchem.html
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+  latex_engine: pdflatex
+  keep_tex: yes
