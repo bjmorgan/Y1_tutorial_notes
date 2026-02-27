@@ -6,4 +6,5 @@ language:
 rmd_files:
   - "index.Rmd"
   - "01-ions-and-solutions.Rmd"
+  - "02-spectroscopy.Rmd"
 output_dir: "docs"

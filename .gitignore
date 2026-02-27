@@ -17,6 +17,11 @@ libs/
 .Ruserdata
 *.Rproj
 
+# Internal workflow docs (not for public repo)
+CLAUDE.md
+WORKFLOW.md
+.claude/
+
 # OS files
 .DS_Store
 Thumbs.db

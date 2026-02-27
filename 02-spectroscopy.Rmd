@@ -1,0 +1,167 @@
+# Rotational Spectroscopy {#rotational-spectroscopy}
+
+## Selection rules
+
+In spectroscopy, a **selection rule** tells you whether a particular transition is allowed. There are two kinds:
+
+- A **gross selection rule** is about the molecule itself: what property must it have to interact with radiation at all?
+- A **specific selection rule** is about the transition: which changes in quantum number are allowed?
+
+### The gross selection rule for rotational spectroscopy
+
+For a molecule to absorb microwave radiation and change its rotational state, it must have a **permanent electric dipole moment**.
+
+Why? Think about what happens when a polar molecule rotates. An observer at a fixed point sees the dipole swinging around, which looks like an oscillating electric field. This oscillating field can couple to the oscillating electric field of the incoming radiation, allowing energy transfer. A molecule with no dipole produces no oscillating field as it rotates, so there is nothing for the radiation to interact with.
+
+::: {.keypoint}
+A molecule is rotationally active (absorbs/emits microwave radiation) if and only if it has a permanent electric dipole moment. This is the gross selection rule for rotational spectroscopy.
+:::
+
+### The specific selection rule: $\Delta J = \pm 1$
+
+You already know that a photon carries a quantum of energy ($E = h\nu$) and a quantum of linear momentum ($p = h/\lambda$). The same pattern extends to angular momentum: a photon carries exactly **one unit of angular momentum**.
+
+When a molecule absorbs a photon, it gains the photon's angular momentum. Conservation of angular momentum then requires the molecule's rotational quantum number to increase by exactly one: $\Delta J = +1$. Similarly, emission gives $\Delta J = -1$.
+
+::: {.keypoint}
+The specific selection rule for rotational spectroscopy is $\Delta J = \pm 1$. This follows from conservation of angular momentum: each photon carries one unit of angular momentum, so the molecule can only gain or lose one rotational quantum at a time.
+:::
+
+### Selection rules for vibrational spectroscopy (a comparison)
+
+The gross selection rule for vibrational spectroscopy has the same kind of physical argument: the electric dipole moment of the molecule must **change during the vibration**. A vibration that modulates the dipole produces an oscillating electric field that can couple to radiation, just as a rotating dipole does.
+
+The specific selection rule ($\Delta v = \pm 1$ in the harmonic approximation) does not have such a neat physical justification. It comes from the mathematical properties of the harmonic oscillator wavefunctions, which you will meet when you study quantum mechanics. For now, it is enough to note the contrast: for rotation, both selection rules can be understood from physical arguments; for vibration, only the gross one can.
+
+## Molecular polarity and rotational activity
+
+The gross selection rule means you need to be able to determine whether a molecule has a permanent dipole. This requires thinking about molecular geometry, not just about whether individual bonds are polar.
+
+Consider a few cases:
+
+- CO: one polar bond, so the molecule has a dipole. Straightforward.
+- CO<sub>2</sub>: two polar C=O bonds, but the molecule is linear and symmetric. The two bond dipoles point in opposite directions and cancel exactly. No molecular dipole, so CO<sub>2</sub> is rotationally inactive.
+- CH<sub>4</sub>: the C–H bonds are slightly polar, and a flat drawing of methane can make it look like three bonds point one way and the fourth points another. But methane is tetrahedral. One way to see the symmetry is to place the carbon at the centre of a cube, with hydrogens at four alternating corners. The top face of the cube has two C–H bonds; the bottom face has the other two. Both pairs are equivalent, so the molecule is perfectly balanced. No net dipole.
+
+Note that "heteronuclear" (containing different elements) is not the same as "has a permanent dipole." For diatomic molecules, all heteronuclear diatomics do have a dipole, so the shortcut works. But for polyatomic molecules it breaks down: CH<sub>4</sub> contains two different elements but has no dipole (tetrahedral symmetry), while NH<sub>3</sub> and CH<sub>2</sub>Cl<sub>2</sub> both have dipoles despite being neither diatomic nor simple. The selection rule is always about the dipole, not the atomic composition.
+
+::: {.keypoint}
+Polar bonds do not guarantee a polar molecule. You need to consider the molecular geometry: if the bond dipoles cancel by symmetry, the molecule has no permanent dipole and is rotationally inactive.
+:::
+
+## Classifying molecular rotors
+
+Every molecule has three perpendicular **principal axes** of rotation, each with an associated **moment of inertia**. In our model, we treat atoms as point masses. For a linear molecule, this means the moment of inertia about the bond axis is exactly zero: point masses lying on the axis have no mass at any distance from it. (A real molecule has electrons distributed around the axis, which contribute a tiny moment of inertia, but this is negligible.) So when we classify molecules, the question is: how many distinct, non-zero moments of inertia does the molecule have?
+
+| Classification | Condition | Example |
+|:---|:---|:---|
+| Linear | $I_b = I_c$, $\;I_a = 0$ | HCN |
+| Spherical top | $I_a = I_b = I_c$ | CH<sub>4</sub> |
+| Symmetric top | Two equal, one different (all non-zero) | NH<sub>3</sub> |
+| Asymmetric rotor | All three different | H<sub>2</sub>O |
+
+The classification follows from the symmetry of the molecule:
+
+- **HCN** is linear. Rotation about the two axes perpendicular to the bond axis is equivalent (both sweep out the same shape), so $I_b = I_c$. In the point mass model, the moment of inertia along the bond axis ($I_a$) is exactly zero: the atoms lie on that axis, so there is no mass at any distance from it.
+- **NH<sub>3</sub>** is a triangular pyramid. The axis through the nitrogen and the centre of the hydrogen triangle is unique (the "figure axis"), while the two perpendicular axes are equivalent by the three-fold symmetry. So $I_b = I_c \neq I_a$, with all three non-zero.
+- **H<sub>2</sub>O** is bent, with no equivalent axes. All three moments of inertia are different.
+- **CH<sub>4</sub>** is tetrahedral. The full symmetry makes all three axes equivalent, so $I_a = I_b = I_c$. However, methane has no permanent dipole, so despite being a spherical top it has **no rotational spectrum**.
+
+## The rotational constant $B$
+
+The rotational constant $B$ encapsulates the moment of inertia of a molecule in a form that relates directly to spectroscopic measurements. It can be expressed in three different units:
+
+$$B \text{ (J)} = \frac{h^2}{8\pi^2 I}, \qquad B \text{ (Hz)} = \frac{h}{8\pi^2 I}, \qquad B \text{ (cm}^{-1}\text{)} = \frac{h}{8\pi^2 I c}$$
+
+These are all the same physical quantity, just scaled differently. The joule form is $B$ as an energy; the Hz and cm⁻¹ forms divide out one or both of $h$ and $c$.
+
+In practice, spectroscopists almost always use **cm$^{-1}$** (wavenumbers). Wavenumbers are proportional to energy (they are just missing a factor of $hc$), and they give conveniently sized numbers for molecular energy levels. Joules and Hz give correct but unwieldy values for molecular-scale quantities.
+
+## From energy levels to a spectrum
+
+Spectroscopy connects quantum mechanics to experiment. The rigid rotor model gives energy levels:
+
+$$E_J = BJ(J+1)$$
+
+where $J = 0, 1, 2, \ldots$ is the rotational quantum number. These energy levels are **not** evenly spaced: the gap between successive levels increases with $J$.
+
+A spectroscopic transition happens when a molecule absorbs (or emits) a photon and moves between energy levels. Conservation of energy requires $h\nu = \Delta E$, and the selection rule restricts us to $\Delta J = +1$ (for absorption). For a molecule starting in level $J$, the transition energy is:
+
+$$\begin{aligned}
+\Delta E &= E_{J+1} - E_J \\
+         &= B(J+1)(J+2) - BJ(J+1) \\
+         &= B(J+1)\big[(J+2) - J\big] \\
+         &= 2B(J+1)
+\end{aligned}$$
+
+So the allowed transitions are:
+
+| Transition | Energy | Frequency |
+|:---|:---|:---|
+| $J = 0 \to 1$ | $2B$ | $2B/h$ |
+| $J = 1 \to 2$ | $4B$ | $4B/h$ |
+| $J = 2 \to 3$ | $6B$ | $6B/h$ |
+| $J = 3 \to 4$ | $8B$ | $8B/h$ |
+
+The transition energies are $2B(J+1)$, which increase linearly. The **spacing between consecutive lines** is always $2B$.
+
+::: {.keypoint}
+The energy levels of a rigid rotor get further apart with increasing $J$, but the lines in the rotational spectrum are evenly spaced. This is because the spectrum shows *transitions* ($\Delta E$), and the constant spacing is the difference between successive transition energies.
+:::
+
+## Extracting molecular properties from a rotational spectrum
+
+The physics runs in one direction: a molecule has a bond length $r$, which determines its moment of inertia $I = \mu r^2$, which determines the rotational constant $B = h^2 / 8\pi^2 I$, which determines the line spacing $2B$ in the spectrum.
+
+$$r \;\longrightarrow\; I = \mu r^2 \;\longrightarrow\; B = \frac{h^2}{8\pi^2 I} \;\longrightarrow\; \text{line spacing} = 2B$$
+
+But every step is invertible, so we can run the chain backwards. If you measure the line spacing, you can extract $B$, then $I$, then $r$:
+
+$$\text{line spacing} = 2B \;\longrightarrow\; B \;\longrightarrow\; I = \frac{h^2}{8\pi^2 B} \;\longrightarrow\; r = \sqrt{\frac{I}{\mu}}$$
+
+### The reduced mass
+
+For a diatomic molecule, the moment of inertia is $I = \mu r^2$, where $\mu$ is the **reduced mass**:
+
+$$\mu = \frac{m_1 \, m_2}{m_1 + m_2}$$
+
+The reduced mass appears because we are converting a two-body problem (two atoms orbiting their common centre of mass) into an equivalent one-body problem (a single particle of mass $\mu$ at distance $r$ from the centre). This is a standard technique in physics that simplifies the mathematics without losing any information.
+
+Note that the reduced mass formula gives a result in amu if you use atomic masses in amu. For the equation $r = \sqrt{I/\mu}$ to work, you need $\mu$ in **kg** (since $I$ is in kg m$^2$). Convert using $1\;\text{amu} = 1.661 \times 10^{-27}\;\text{kg}$.
+
+This calculation is worth pausing over. From a set of line positions in a microwave spectrum, you can extract a bond length in picometres. Spectroscopy lets you measure molecular dimensions from the way light interacts with molecules.
+
+### A note on unit conversions
+
+Two common pitfalls arise in these calculations:
+
+1. **Converting from cm$^{-1}$ to joules.** The conversion is $E = hc\tilde{\nu}$. If $\tilde{\nu}$ is in cm$^{-1}$, then $c$ must be in cm s$^{-1}$ ($2.998 \times 10^{10}$). Alternatively, convert $\tilde{\nu}$ to m$^{-1}$ first (multiply by 100) and use $c$ in m s$^{-1}$. Either approach works; mixing them introduces a factor-of-100 error.
+
+2. **Reduced mass units.** Computing $\mu$ from atomic masses in amu gives a result in amu. You must convert to kg before using $r = \sqrt{I/\mu}$, because $I$ is in kg m$^2$.
+
+As a sanity check: a typical covalent bond length is 100 to 200 pm (1 to 2 \AA, or $1$-$2 \times 10^{-10}$ m). If your answer is not in this range, look for a unit error.
+
+## Beyond the rigid rotor
+
+The rigid rotor model predicts perfectly even line spacing, and for most molecules at low $J$ this is a good approximation. But real bonds are not rigid. At high $J$, the molecule is spinning fast, and centrifugal force stretches the bond. This increases $r$, which increases $I$, which decreases $B$.
+
+The effect on the energy levels is that they become **closer together** than the rigid rotor predicts. The direction of this shift makes physical sense from the **correspondence principle**: as the bond stretches, the molecule gets larger, and larger objects are closer to the classical regime where energy levels form a continuum. So we should expect the levels to get closer together at high $J$, which is exactly what centrifugal distortion gives us.
+
+The effect on the spectrum is that the line spacing is no longer constant: lines get progressively closer together at higher frequency. This is accounted for by adding a correction term to the energy:
+
+$$E_J = BJ(J+1) - DJ^2(J+1)^2$$
+
+where $D$ is the **centrifugal distortion constant**. For most molecules $D \ll B$, so the rigid rotor is a good starting approximation.
+
+## Isotope effects on the rotational constant
+
+The rotational constant depends on the moment of inertia, which depends on both the bond length and the reduced mass. If we assume that isotopic substitution does not change the bond length (the electronic structure is determined by the number of protons and electrons, not by the nuclear mass), then the only thing that changes between isotopologues is $\mu$.
+
+This leads to a useful insight: substituting a heavier isotope on the **light** atom has a much larger effect than substituting on the heavy atom. For example, in HBr:
+
+- Replacing ${}^{79}\ce{Br}$ with ${}^{81}\ce{Br}$ changes $\mu$ by about 0.03%. The rotational spectrum is almost unaffected, and using the average atomic mass for bromine is a perfectly good approximation.
+- Replacing ${}^{1}\ce{H}$ with ${}^{2}\ce{H}$ (deuterium) nearly doubles $\mu$ (from about 0.99 to 1.95 amu). This produces a dramatically different rotational spectrum.
+
+::: {.keypoint}
+Isotope substitution on the light atom has the largest effect on the reduced mass (and therefore on $B$), because a small absolute change in mass represents a large *fractional* change. Going from ${}^{1}\ce{H}$ to ${}^{2}\ce{H}$ is a 100% increase in mass; going from ${}^{79}\ce{Br}$ to ${}^{81}\ce{Br}$ is only 2.5%.
+:::
