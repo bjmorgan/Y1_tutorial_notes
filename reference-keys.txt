@@ -29,3 +29,17 @@ anode-and-cathode
 stoichiometry-and-delta-g
 from-cell-potential-to-mass-faradays-law
 assumptions-to-be-aware-of
+rotational-spectroscopy
+selection-rules
+the-gross-selection-rule-for-rotational-spectroscopy
+the-specific-selection-rule-delta-j-pm-1
+selection-rules-for-vibrational-spectroscopy-a-comparison
+molecular-polarity-and-rotational-activity
+classifying-molecular-rotors
+the-rotational-constant-b
+from-energy-levels-to-a-spectrum
+extracting-molecular-properties-from-a-rotational-spectrum
+the-reduced-mass
+a-note-on-unit-conversions
+beyond-the-rigid-rotor
+isotope-effects-on-the-rotational-constant
