@@ -2,7 +2,7 @@
 
 ## Selection rules
 
-In spectroscopy, a **selection rule** tells you whether a particular transition is allowed. There are two kinds:
+Before we can interpret a rotational spectrum, we need to know which transitions are allowed. In spectroscopy, a **selection rule** tells you this. There are two kinds:
 
 - A **gross selection rule** is about the molecule itself: what property must it have to interact with radiation at all?
 - A **specific selection rule** is about the transition: which changes in quantum number are allowed?
@@ -51,7 +51,9 @@ Polar bonds do not guarantee a polar molecule. You need to consider the molecula
 
 ## Classifying molecular rotors
 
-Every molecule has three perpendicular **principal axes** of rotation, each with an associated **moment of inertia**. In our model, we treat atoms as point masses. For a linear molecule, this means the moment of inertia about the bond axis is exactly zero: point masses lying on the axis have no mass at any distance from it. (A real molecule has electrons distributed around the axis, which contribute a tiny moment of inertia, but this is negligible.) So when we classify molecules, the question is: how many distinct, non-zero moments of inertia does the molecule have?
+Every molecule has three perpendicular **principal axes** of rotation, each with an associated **moment of inertia**. In our model, we treat atoms as point masses. For a linear molecule, this means the moment of inertia about the bond axis is exactly zero: point masses lying on the axis have no mass at any distance from it. (A real molecule has electrons distributed around the axis, which contribute a tiny moment of inertia, but this is negligible.)
+
+The question, then, is: how many distinct, non-zero moments of inertia does the molecule have? The answer depends on the molecular symmetry, and it determines how we classify the rotor:
 
 | Classification | Condition | Example |
 |:---|:---|:---|
@@ -60,7 +62,7 @@ Every molecule has three perpendicular **principal axes** of rotation, each with
 | Symmetric top | Two equal, one different (all non-zero) | NH<sub>3</sub> |
 | Asymmetric rotor | All three different | H<sub>2</sub>O |
 
-The classification follows from the symmetry of the molecule:
+To see where these classifications come from, think about the symmetry in each case:
 
 - **HCN** is linear. Rotation about the two axes perpendicular to the bond axis is equivalent (both sweep out the same shape), so $I_b = I_c$. In the point mass model, the moment of inertia along the bond axis ($I_a$) is exactly zero: the atoms lie on that axis, so there is no mass at any distance from it.
 - **NH<sub>3</sub>** is a triangular pyramid. The axis through the nitrogen and the centre of the hydrogen triangle is unique (the "figure axis"), while the two perpendicular axes are equivalent by the three-fold symmetry. So $I_b = I_c \neq I_a$, with all three non-zero.
@@ -69,7 +71,7 @@ The classification follows from the symmetry of the molecule:
 
 ## The rotational constant $B$
 
-The rotational constant $B$ encapsulates the moment of inertia of a molecule in a form that relates directly to spectroscopic measurements. It can be expressed in three different units:
+The rotational constant $B$ is a convenient way to express the moment of inertia in a form that relates directly to what you measure in a spectrum. It can be expressed in three different units:
 
 $$B \text{ (J)} = \frac{h^2}{8\pi^2 I}, \qquad B \text{ (Hz)} = \frac{h}{8\pi^2 I}, \qquad B \text{ (cm}^{-1}\text{)} = \frac{h}{8\pi^2 I c}$$
 
@@ -133,11 +135,11 @@ This calculation is worth pausing over. From a set of line positions in a microw
 
 ### A note on unit conversions
 
-Two common pitfalls arise in these calculations:
+These calculations involve mixing quantities in different unit systems, which is where most errors come from. Two places are worth thinking about carefully:
 
-1. **Converting from cm$^{-1}$ to joules.** The conversion is $E = hc\tilde{\nu}$. If $\tilde{\nu}$ is in cm$^{-1}$, then $c$ must be in cm s$^{-1}$ ($2.998 \times 10^{10}$). Alternatively, convert $\tilde{\nu}$ to m$^{-1}$ first (multiply by 100) and use $c$ in m s$^{-1}$. Either approach works; mixing them introduces a factor-of-100 error.
+1. **Converting from cm$^{-1}$ to joules.** The conversion is $E = hc\tilde{\nu}$. If $\tilde{\nu}$ is in cm$^{-1}$, then $c$ must also be in cm-based units: cm s$^{-1}$ ($2.998 \times 10^{10}$). Alternatively, convert $\tilde{\nu}$ to m$^{-1}$ first (multiply by 100) and use $c$ in m s$^{-1}$. Either approach works; the key is that the length unit in $c$ matches the length unit in $\tilde{\nu}$. Mixing them introduces a factor-of-100 error.
 
-2. **Reduced mass units.** Computing $\mu$ from atomic masses in amu gives a result in amu. You must convert to kg before using $r = \sqrt{I/\mu}$, because $I$ is in kg m$^2$.
+2. **Reduced mass units.** Computing $\mu$ from atomic masses in amu gives a result in amu. But $I$ is in kg m$^2$, so you need $\mu$ in **kg** before using $r = \sqrt{I/\mu}$. Convert using $1\;\text{amu} = 1.661 \times 10^{-27}\;\text{kg}$.
 
 As a sanity check: a typical covalent bond length is 100 to 200 pm (1 to 2 \AA, or $1$-$2 \times 10^{-10}$ m). If your answer is not in this range, look for a unit error.
 

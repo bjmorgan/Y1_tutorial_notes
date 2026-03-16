@@ -1,0 +1,246 @@
+# Kinetics {#kinetics}
+
+## Rate equations and stoichiometry
+
+### Rate laws and integrated rate laws
+
+Before we get into stoichiometry, it is worth being clear about two things that look similar but answer different questions.
+
+A **rate law** tells you the rate of reaction *right now*, given the current concentrations. For a first-order elementary process $\ce{A} \overset{k}{\longrightarrow} \ce{products}$, the rate law is:
+
+$$\nu = k[\ce{A}]$$
+
+An **integrated rate law** tells you how the concentration changes over time. For the same reaction:
+
+$$[\ce{A}]_t = [\ce{A}]_0 \, e^{-kt}$$
+
+These are related (the second comes from integrating the first), but they answer different questions. If a problem asks you for the rate in terms of [A], it is asking for the rate law, not the integrated form.
+
+### Connecting the rate to individual species
+
+For an elementary process, the rate law follows directly from the molecularity:
+
+- A unimolecular process $\ce{A -> products}$ has rate $\nu = k[\ce{A}]$.
+- A bimolecular process $\ce{A + B -> products}$ has rate $\nu = k[\ce{A}][\ce{B}]$.
+- A bimolecular process $\ce{2A -> products}$ has rate $\nu = k[\ce{A}]^2$.
+
+Notice that in every case the rate law is written in terms of the **reactant** concentrations. This is because the rate of an elementary process depends on how often the reactant molecules encounter each other (or, for a unimolecular process, on how many reactant molecules are available to react). Product concentrations do not appear in the rate law for an elementary process.
+
+The place where errors often creep in is connecting the overall rate $\nu$ to the rates of change of individual species, $\mathrm{d}[\ce{X}]/\mathrm{d}t$. Stoichiometric coefficients can appear in two different roles, and it is easy to confuse them.
+
+### Powers vs. prefactors
+
+When writing rate equations, a stoichiometric coefficient can appear in two different places, for two different reasons:
+
+1. As a **power** in the rate law ($\nu = k[\ce{A}]^2$). This answers the question: how many molecules of A need to come together for a single reaction event to happen?
+
+2. As a **prefactor** relating $\mathrm{d}[\ce{X}]/\mathrm{d}t$ to the overall rate $\nu$. This answers a different question: how many molecules of X are consumed or produced in each reaction event?
+
+These are different questions, and they do not always give the same answer. To see why, it helps to start with a simple case and then look at where the 2:1 stoichiometries cause confusion.
+
+**The simple case: $\ce{A} \overset{k}{\longrightarrow} \ce{B}$.** This is unimolecular, so one molecule of A is involved in each event. The rate law is $\nu = k[\ce{A}]$. Each event consumes one A and produces one B, so:
+
+$$\frac{\mathrm{d}[\ce{A}]}{\mathrm{d}t} = -\nu = -k[\ce{A}], \qquad \frac{\mathrm{d}[\ce{B}]}{\mathrm{d}t} = +\nu = k[\ce{A}]$$
+
+No factors of 2 anywhere. Now consider two reactions where a stoichiometric coefficient of 2 appears, but in different places.
+
+**Case 1: $\ce{2A} \overset{k}{\longrightarrow} \ce{B}$.** This is bimolecular: two molecules of A must come together for a reaction event to occur. So the rate law has $[\ce{A}]$ raised to the power 2:
+
+$$\nu = k[\ce{A}]^2$$
+
+Now, what about $\mathrm{d}[\ce{A}]/\mathrm{d}t$? Each reaction event removes two molecules of A from the solution. So [A] decreases twice as fast as the overall rate:
+
+$$\frac{\mathrm{d}[\ce{A}]}{\mathrm{d}t} = -2\nu = -2k[\ce{A}]^2$$
+
+Each event produces one molecule of B, so:
+
+$$\frac{\mathrm{d}[\ce{B}]}{\mathrm{d}t} = +\nu = k[\ce{A}]^2$$
+
+In this case the 2 appears in *both* roles: as a power in the rate law (because two molecules participate) *and* as a prefactor on $\mathrm{d}[\ce{A}]/\mathrm{d}t$ (because two molecules are consumed per event).
+
+**Case 2: $\ce{A} \overset{k}{\longrightarrow} \ce{2B}$.** This is unimolecular: only one molecule of A is involved. So the rate law is first-order:
+
+$$\nu = k[\ce{A}]$$
+
+Each event consumes one A, so $\mathrm{d}[\ce{A}]/\mathrm{d}t = -\nu = -k[\ce{A}]$. But each event produces *two* molecules of B, so the factor of 2 appears as a prefactor on $\mathrm{d}[\ce{B}]/\mathrm{d}t$:
+
+$$\frac{\mathrm{d}[\ce{B}]}{\mathrm{d}t} = +2\nu = 2k[\ce{A}]$$
+
+Here the 2 appears only as a prefactor (counting products per event), not as a power. The rate law itself has no squared term because only one molecule of A participates.
+
+::: {.keypoint}
+A stoichiometric coefficient appears as a **power** in the rate law when it tells you how many molecules of that species participate in the reaction event. It appears as a **prefactor** on $\mathrm{d}[\ce{X}]/\mathrm{d}t$ when it tells you how many molecules of that species are consumed or produced per event. These are two different questions, and the answers are not always the same number.
+:::
+
+Putting all three cases side by side makes the pattern clearer:
+
+| | $\ce{A} \overset{k}{\longrightarrow} \ce{B}$ | $\ce{A} \overset{k}{\longrightarrow} \ce{2B}$ | $\ce{2A} \overset{k}{\longrightarrow} \ce{B}$ |
+|:---|:---:|:---:|:---:|
+| $\nu$ | $k[\ce{A}]$ | $k[\ce{A}]$ | $k[\ce{A}]^2$ |
+| $\dfrac{\mathrm{d}[\ce{A}]}{\mathrm{d}t}$ | $-k[\ce{A}]$ | $-k[\ce{A}]$ | $-2k[\ce{A}]^2$ |
+| $\dfrac{\mathrm{d}[\ce{B}]}{\mathrm{d}t}$ | $+k[\ce{A}]$ | $+2k[\ce{A}]$ | $+k[\ce{A}]^2$ |
+
+Look at where the 2 appears in each column. In the middle column ($\ce{A -> 2B}$), the 2 is on the product, so only $\mathrm{d}[\ce{B}]/\mathrm{d}t$ picks up a factor of 2. In the right column ($\ce{2A -> B}$), the 2 is on the reactant, so $\nu$ has $[\ce{A}]^2$ *and* $\mathrm{d}[\ce{A}]/\mathrm{d}t$ has an extra factor of 2.
+
+### A note on sign conventions
+
+You may have seen the overall rate defined in your lecture notes using stoichiometric coefficients in the denominator:
+
+$$\nu = -\frac{1}{\nu_{\ce{A}}} \frac{\mathrm{d}[\ce{A}]}{\mathrm{d}t} = +\frac{1}{\nu_{\ce{B}}} \frac{\mathrm{d}[\ce{B}]}{\mathrm{d}t}$$
+
+where $\nu_{\ce{A}}$ and $\nu_{\ce{B}}$ are the stoichiometric coefficients (1 or 2 in these examples). This is the same relationship, just rearranged. For $\ce{2A} \overset{k}{\longrightarrow} \ce{B}$:
+
+$$\nu = -\frac{1}{2}\frac{\mathrm{d}[\ce{A}]}{\mathrm{d}t} \qquad \Longleftrightarrow \qquad \frac{\mathrm{d}[\ce{A}]}{\mathrm{d}t} = -2\nu$$
+
+The $\frac{1}{2}$ in the lecture notes and the $2\times$ in the rate-of-change expression are two sides of the same coin. If you find one form more intuitive than the other, use that one and rearrange.
+
+## Order and molecularity
+
+These terms come up together so often that it is worth being clear about what each one means and where they differ.
+
+**Order** (with respect to a species) is the power to which its concentration is raised in the empirical rate law $\nu = k[\ce{A}]^a[\ce{B}]^b\ldots$ The order with respect to A is $a$; the **overall order** is $a + b + \ldots$ Order is determined experimentally. It does not have to be an integer.
+
+**Molecularity** is the number of reactant molecules (or atoms) involved in an elementary process. A unimolecular process involves one molecule; a bimolecular process involves two. Molecularity is always a positive integer.
+
+The important thing to remember is that molecularity is only defined for elementary processes. If a reaction proceeds through a multi-step mechanism, the individual steps each have a molecularity, but the overall reaction does not. The overall reaction has an order (determined by experiment), which can be anything, including non-integer values.
+
+For a single elementary process, the molecularity and the overall order are always equal: a bimolecular process is always second-order overall. But for a complex mechanism, the overall order tells you nothing directly about the molecularity of any individual step.
+
+## Testing kinetic models against data
+
+Suppose you have measured how the concentration of a reactant changes with time, and you want to work out the order of the reaction. How do you approach this?
+
+The idea is to compare your data against the predictions of different kinetic models. Each candidate order (zeroth, first, second...) predicts a specific mathematical relationship between concentration and time. If your data match one of these relationships, you have found the order. The general strategy is described in the [lecture notes on methods for determining rate laws](https://bjmorgan.github.io/CH12002/methods-for-determining-rate-laws-from-experimental-data.html), but the logic is:
+
+1. **Propose** a candidate order (e.g. first-order).
+2. **Write down** the integrated rate law for that order.
+3. **Rearrange** it into the form $y = mx + c$.
+4. **Test** whether your data are consistent with a straight line when plotted in this form.
+
+If the plot is linear, you have found the order, and the slope gives you the rate constant. If the plot is curved, try the next candidate.
+
+### The integrated rate laws
+
+Each order has a characteristic integrated rate law and a corresponding linear plot:
+
+| Order | Integrated rate law | Plot $y$ vs. $x$ | Slope |
+|:---:|:---|:---|:---:|
+| 0 | $[\ce{A}]_t = [\ce{A}]_0 - kt$ | $[\ce{A}]_t$ vs. $t$ | $-k$ |
+| 1 | $\ln[\ce{A}]_t = \ln[\ce{A}]_0 - kt$ | $\ln[\ce{A}]_t$ vs. $t$ | $-k$ |
+| 2 | $\displaystyle\frac{1}{[\ce{A}]_t} = \frac{1}{[\ce{A}]_0} + kt$ | $1/[\ce{A}]_t$ vs. $t$ | $k$ |
+
+These are derived in [Lecture 2](https://bjmorgan.github.io/CH12002/integrated-rate-laws.html) by integrating the differential rate equation in each case.
+
+### An alternative to plotting: checking consistency
+
+You do not always need to draw a graph. You can test a proposed order by substituting two or more data points into the integrated rate law and solving for $k$. If the same value of $k$ comes out each time, the data are consistent with that order. If you get different values of $k$ from different data points, the model does not fit.
+
+This is really the same test as plotting: if the data fall on a straight line, the slope (and therefore $k$) is the same between any two points. Checking consistency just skips the drawing.
+
+### A useful shortcut: the half-life test
+
+For a first-order reaction, the half-life is:
+
+$$t_{1/2} = \frac{\ln 2}{k}$$
+
+Notice that this is independent of concentration. So if a reaction is first-order, the time it takes for the concentration to halve is the same regardless of where you start. You can check this directly from the data without plotting anything: pick any two equal-length time intervals and see whether the concentration drops by the same *fraction* each time.
+
+If the fractional decrease varies with concentration, the reaction is not first-order. For a second-order reaction, the half-life gets longer as the reaction proceeds (because $t_{1/2} = 1/(k[\ce{A}]_0)$ depends on concentration), so the reaction appears to slow down more than you would expect from first-order kinetics. For a zeroth-order reaction, the half-life gets shorter.
+
+### When the data give you products, not reactants
+
+Sometimes the experimental data report the concentration of a product rather than a reactant. All of the integrated rate laws above are written in terms of the reactant concentration, so you need to convert.
+
+If the stoichiometry is $\ce{A -> P}$, then every molecule of P that appears came from an A that was consumed, so $[\ce{A}]_t = [\ce{A}]_0 - [\ce{P}]_t$. To use this you need $[\ce{A}]_0$, which you can get from the completion value: when the reaction finishes ($t = \infty$), all A has been consumed, so $[\ce{P}]_\infty = [\ce{A}]_0$.
+
+## The isolation method
+
+What if the reaction involves more than one reactant? The rate law might be $\nu = k[\ce{A}]^a[\ce{B}]^b$, and you want to find $a$ and $b$ separately. The problem is that both concentrations are changing at the same time, which makes it hard to untangle the individual contributions.
+
+The **isolation method** gets around this by using a large excess of one reactant. If $[\ce{B}]_0 \gg [\ce{A}]_0$, then even when all of A has been consumed, [B] has barely changed: $[\ce{B}]_t \approx [\ce{B}]_0$ throughout the reaction. The rate law simplifies to:
+
+$$\nu = k[\ce{A}]^a[\ce{B}]_0^b = k'[\ce{A}]^a$$
+
+where $k' = k[\ce{B}]_0^b$ is a **pseudo-rate-constant** that bundles together $k$ and the (approximately constant) concentration of the excess reactant. The reaction now *looks like* it only depends on [A], and you can determine $a$ using the methods above.
+
+Once you have determined $k'$ (from the slope of your linear plot, or by checking consistency), you are not quite finished. The pseudo-rate-constant $k'$ still has the excess concentration baked into it. To recover the true rate constant $k$, you need to divide out the contribution from the excess species:
+
+$$k = \frac{k'}{[\ce{B}]_0^b}$$
+
+If you know $b$ (e.g. from the stoichiometry or from a separate experiment where you isolate B instead), this is a single division. It is easy to overlook this final step, especially if the analysis of the [A] data took most of the effort.
+
+A fuller discussion is in the [lecture notes on the isolation method](https://bjmorgan.github.io/CH12002/methods-for-determining-rate-laws-from-experimental-data.html#the-isolation-method).
+
+## The steady-state approximation
+
+The steady-state approximation (SSA) is a technique for simplifying the kinetics of multi-step reactions. It is covered in [Lecture 5](https://bjmorgan.github.io/CH12002/ssa.html). Here we focus on the physical reasoning behind it, and on a subtlety in the language that can lead to confusion.
+
+### The physical picture
+
+Many reaction mechanisms involve a **reactive intermediate**: a species that is produced in one step and consumed in a subsequent step. If the intermediate is highly reactive, it is consumed almost as soon as it is formed. Its concentration rises quickly to a low value, and then stays approximately constant for most of the reaction.
+
+This is the physical basis for the SSA. Because the intermediate is so reactive, its concentration stays low and approximately constant. But think about what "approximately constant" means mathematically: for the concentration to remain steady, the total *rate* at which the intermediate is formed must be approximately equal to the total *rate* at which it is consumed. If formation outpaced consumption, the concentration would be rising; if consumption outpaced formation, it would be falling.
+
+::: {.keypoint}
+The steady-state approximation sets $\mathrm{d}[\ce{I}]/\mathrm{d}t = 0$ for a reactive intermediate I. The physical picture is that the intermediate is so reactive that its concentration stays low and approximately constant. The mathematical condition is that the rate of formation equals the rate of consumption.
+:::
+
+It is worth being careful with the language here. Each individual molecule of the intermediate has a short lifetime: it is produced and then quickly consumed. This is why the concentration stays low. But the *rates* (molecules per unit time per unit volume) of formation and consumption must be approximately equal for the concentration to be steady. These two ideas are not contradictory: each molecule is short-lived, but new ones keep being produced at the same rate as old ones are consumed.
+
+### Applying the SSA
+
+Once you have the physical picture, the procedure for applying the SSA is straightforward:
+
+1. Write down the differential rate equation for every species, including all intermediates.
+2. For each reactive intermediate, set $\mathrm{d}[\ce{I}]/\mathrm{d}t = 0$.
+3. Solve algebraically for the concentration of each intermediate in terms of the reactant and product concentrations and the rate constants.
+4. Substitute these expressions into the rate equation for the species you care about (usually a reactant or product).
+
+The result is a rate law that involves only observable species (reactants, products) and rate constants. The intermediate concentrations have been eliminated.
+
+### SSA vs. pre-equilibrium
+
+The SSA is not the only way to handle reactive intermediates. Another common approach is the **pre-equilibrium approximation**, and it is important not to mix them up.
+
+In a pre-equilibrium, the first step is a fast, reversible reaction that reaches equilibrium before the second step has time to proceed significantly. You can then write an equilibrium constant $K = k_1/k_{-1}$ for the first step and use it to express the intermediate concentration in terms of the reactants. This works when the first step is fast and reversible, and the second step is slow.
+
+The SSA is different. It does not assume the first step is at equilibrium. Instead, it assumes the intermediate concentration is approximately constant, which requires the rates of formation and consumption to be approximately equal. The SSA is more general: it works whether or not the first step is reversible, and it does not require any particular step to be "fast" or "slow" relative to the others.
+
+Both methods can give the same result in certain limits, but they start from different assumptions. If a question asks you to use the SSA, set $\mathrm{d}[\ce{I}]/\mathrm{d}t = 0$ and solve. Do not write down an equilibrium constant for the first step unless you are told to use a pre-equilibrium approach.
+
+## Simplifying complex rate laws: limiting cases
+
+The SSA (and other approaches) sometimes gives rate laws that look more complicated than a simple power law. For example, a mechanism might give:
+
+$$\frac{\mathrm{d}[\ce{P}]}{\mathrm{d}t} = \frac{k[\ce{A}][\ce{B}]^{1/2}}{1 + k'[\ce{A}]}$$
+
+This does not have a simple overall order, because of the $[\ce{A}]$ term in the denominator. But in certain **limiting cases**, one term in the denominator dominates, and the expression simplifies to something where order *is* well-defined.
+
+### How to find limiting cases
+
+The key idea is simple. When you have a sum in the denominator, like $a + b$, one of the two terms might be much larger than the other. If so, you can drop the smaller term:
+
+- If $a \gg b$, then $a + b \approx a$, and you can ignore $b$.
+- If $b \gg a$, then $a + b \approx b$, and you can ignore $a$.
+
+Let us apply this to the rate law above. The denominator is $1 + k'[\ce{A}]$, so the two terms are $1$ and $k'[\ce{A}]$.
+
+**If $k'[\ce{A}] \gg 1$:** The denominator becomes $\approx k'[\ce{A}]$, so:
+
+$$\frac{\mathrm{d}[\ce{P}]}{\mathrm{d}t} \approx \frac{k[\ce{A}][\ce{B}]^{1/2}}{k'[\ce{A}]} = \frac{k}{k'}[\ce{B}]^{1/2}$$
+
+The $[\ce{A}]$ cancels, so the reaction is zeroth-order in A and half-order in B.
+
+**If $k'[\ce{A}] \ll 1$:** The denominator becomes $\approx 1$, so:
+
+$$\frac{\mathrm{d}[\ce{P}]}{\mathrm{d}t} \approx k[\ce{A}][\ce{B}]^{1/2}$$
+
+Now the reaction is first-order in A and half-order in B.
+
+::: {.keypoint}
+A complex rate law may not have a well-defined overall order. But in limiting cases, where one term in the denominator is much larger than the other, it can simplify to a power-law form where order is well-defined. The conditions that determine which limit applies are usually about relative concentrations or rate constants.
+:::
+
+### A note on molecularity
+
+In both limiting cases above, the simplified rate law has a well-defined order. But the overall reaction still does not have a molecularity. Molecularity describes individual elementary steps in the underlying mechanism, not the overall reaction. We can assign an order to the overall reaction (in each limiting case), but only the elementary steps have a molecularity.
