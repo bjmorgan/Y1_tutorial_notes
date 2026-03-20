@@ -1,6 +1,6 @@
 ---
 title: "CH12002 Tutorial Notes"
-autghor: "Benjamin J. Morgan"
+author: "Benjamin J. Morgan"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: article

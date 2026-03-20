@@ -1,4 +1,5 @@
 name: Build and Deploy Bookdown
+
 on:
   push:
     branches: main
@@ -15,10 +16,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Setup R
         uses: r-lib/actions/setup-r@v2
-        
+
       - name: Setup Pandoc
         uses: r-lib/actions/setup-pandoc@v2
         with:
@@ -27,12 +28,30 @@ jobs:
       - name: Install packages
         run: |
           Rscript -e 'install.packages(c("bookdown", "rmarkdown"))'
-          
-      - name: Build book
+
+      - name: Copy shared resources
+        run: |
+          for dir in Y1 Y2; do
+            cp style.css "$dir/"
+          done
+
+      - name: Build Y1 book
+        working-directory: Y1
         run: Rscript -e 'bookdown::render_book("index.Rmd")'
-        
+
+      - name: Build Y2 book
+        working-directory: Y2
+        run: Rscript -e 'bookdown::render_book("index.Rmd")'
+
+      - name: Assemble deploy folder
+        run: |
+          mkdir -p _deploy/Y1 _deploy/Y2
+          cp -r Y1/_site/* _deploy/Y1/
+          cp -r Y2/_site/* _deploy/Y2/
+          echo '<html><head><meta http-equiv="refresh" content="0;url=Y1/"></head></html>' > _deploy/index.html
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.6.8
         with:
           branch: gh-pages
-          folder: docs
+          folder: _deploy

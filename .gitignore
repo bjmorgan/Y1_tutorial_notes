@@ -1,5 +1,7 @@
 # Bookdown build output
-docs/
+Y1/_site/
+Y2/_site/
+_deploy/
 _book/
 _bookdown_files/
 tutorial-notes.Rmd
