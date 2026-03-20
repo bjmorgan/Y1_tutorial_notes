@@ -29,12 +29,6 @@ jobs:
         run: |
           Rscript -e 'install.packages(c("bookdown", "rmarkdown"))'
 
-      - name: Copy shared resources
-        run: |
-          for dir in Y1 Y2; do
-            cp style.css "$dir/"
-          done
-
       - name: Build Y1 book
         working-directory: Y1
         run: Rscript -e 'bookdown::render_book("index.Rmd")'
